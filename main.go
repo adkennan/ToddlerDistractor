@@ -170,8 +170,7 @@ func main() {
 
 	for true {
 
-		event := sdl.PollEvent()
-		if event != nil {
+		for event := sdl.PollEvent(); event != nil; event = sdl.PollEvent() {
 			switch e := event.(type) {
 			case *sdl.QuitEvent:
 				return
